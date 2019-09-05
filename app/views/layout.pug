@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    meta(name='viewport',content='width=device-width, initial-scale=1.0')
+    title= title
+    link(rel='stylesheet', href='/bootstrap/css/sb-admin-2.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    //Scripts needed for angular to work properly.  
+    script(src='/angular/angular.js')
+    script.
+      var myApp = angular.module('myApp', []);
+    script(src='/angular/services.js')
+    script(src='/angular/controllers.js')
+    
+  body(ng-app='myApp')
+    block header
+    block content
+    block footer
+      footer(class=['footer','bg-dark','text-light','sticky-bottom'].join(' '))
+        hsmall(class=['float-right','small-padding'].join(' ')) &copy; Lucas Andrade, 2018
+
+
+  //Scripts needed for bootstrap to work properly.
+
+  script(src='/javascripts/jquery-1.11.1.min.js')
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous")
+  script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous")
+  script(src='/bootstrap/js/sb-admin-2.js')

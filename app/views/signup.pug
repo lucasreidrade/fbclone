@@ -1,0 +1,14 @@
+div(ng-controller='signupFormCtrl')
+  form
+    div.form-group
+      label(class=['left','half-width'].join(' ') for="name") Name
+        input#name(class='form-control' type='text' ng-model='name' placeholder='Name' required)
+      label(class=['right','half-width'].join(' ') for="email") E-mail
+        input#email(class='form-control' type='email' ng-model='email' placeholder='E-mail' required)
+    div.form-group
+      label(class=['left','half-width'].join(' ') for="password") Password
+        input#password(ng-class="{'is-invalid': !pswMatch}" class='form-control' type='password' ng-model='password' placeholder='Password' ng-change="validatePassword()" required)
+        small.invalid-feedback  {{pswStatus}}
+      label(class=['right','half-width'].join(' ') for="password2") Confirm Password
+        input#password2(ng-class="{'is-invalid': !pswMatch}" class='form-control' type='password' ng-model='password2' placeholder='Confirm password' ng-change="validatePassword()" required)
+    button(class='btn bg-light btn-outline-secondary form-control' ng-click='submit()') Sign up

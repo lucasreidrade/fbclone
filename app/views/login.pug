@@ -1,0 +1,9 @@
+div(ng-controller='loginFormCtrl')
+  form
+    div.form-group
+      label.left.half-width(for="email") E-mail
+        input#email(class='form-control' type='email' ng-model='email' placeholder='E-mail' required)
+      label.right.half-width(for="password")  Password
+        input#password(class='form-control' type='password' ng-model='password' placeholder='Password' required)  
+    div.form-group
+      button(class='btn bg-light btn-outline-secondary form-control' ng-click='submit()') Log in
