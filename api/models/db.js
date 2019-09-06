@@ -1,8 +1,10 @@
 var mongoose = require('mongoose');
 
 // CONNECT TO DB
-const dbURI = (process.env.NODE_ENV === 'production') ? process.env.MONGOLAB_URI : 'mongodb://localhost/socialNetwork';
-
+const mongoURI = 'mongodb://localhost/socialNetwork';
+const MONGOLAB_URI = process.env.MONGOLAB_URI;
+const dbURI = (process.env.NODE_ENV === 'production') ? MONGOLAB_URI:mongoURI;
+console.log('dbURI = ' + dbURI);
 mongoose.connect(dbURI,{ useNewUrlParser: true } );
 
 
