@@ -90,7 +90,7 @@ myApp.controller('profileFormCtrl', ['$scope', '$document', 'userActions', funct
         if ($scope.user.image) {
             $scope.imgSrc = $scope.user.image.data;
         } else {
-            $scope.imgSrc = '../images/profile_placeholder.png';
+            $scope.imgSrc = '../../images/profile_placeholder.png';
         }
         if ($scope.user.bio) {
             $document[0].getElementById('bio').value = $scope.user.bio;
