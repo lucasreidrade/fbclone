@@ -1,26 +1,17 @@
 extends layout
 
 block content
-  container(class=['container-fluid','row','h-100','w-100'].join(' '))
-    container(class=['container-fluid','col-lg-3','col-md-4','col-sm-6','col-xm-12','h-100','w-100'].join(' '))
-      h1= title
-      h2 Welcome to #{title}
-    div(class=['container','col-lg-9','col-md-8','col-sm-6','col-xm-12','h-100', 'w-100'].join(' '))
-      ul(class=['nav','nav-tabs','nav-justified','w-100'].join(' '))
-        li(class='nav-item border h-50')
+  container('container container-fluid row')
+    div(class='col text-center')
+      ul(class='nav nav-tabs nav-justified row')
+        li(class='nav-item border col p-0')
           a(class='nav-link btn btn-block active' data-toggle='tab' href='#Login') Log in
-        li(class='nav-item border h-50')
+        li(class='nav-item border col p-0')
           a(class='nav-link btn btn-block' data-toggle='tab' href='#Signup') Sign up
-      div(class="tab-content border w-100 h-100")
-        div#Login(class=["tab-pane","fade","active","show",'w-100','p-sm-3'].join(' '))
+      div(class="tab-content border row")
+        div#Login(class='tab-pane fade active show w-100 p-sm-3 col')
           h2 Log in
           include login.pug
-        div#Signup(class=["tab-pane","fade",'w100','p-sm-3'].join(' '))
+        div#Signup(class='tab-pane fade w100 p-sm-3 col')
           h2 Sign up
           include signup.pug
-
-
-block header
-  header(class=['header','navbar','navbar-fixed-top','bg-dark','text-light','container-fluid'].join(' '))
-    h1= title
-    include login.pug

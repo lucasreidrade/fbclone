@@ -1,14 +1,16 @@
-div(ng-controller='signupFormCtrl')
+div.p-1(ng-controller='signupFormCtrl')
   form
-    div.form-group
-      label(class=['left','half-width'].join(' ') for="name") Name
+    div.form-group.row
+      label(class='col-xg-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left p-1' for="name") Name
         input#name(class='form-control' type='text' ng-model='name' placeholder='Name' required)
-      label(class=['right','half-width'].join(' ') for="email") E-mail
+      label(class='col-xg-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left p-1' for="email") E-mail
         input#email(class='form-control' type='email' ng-model='email' placeholder='E-mail' required)
-    div.form-group
-      label(class=['left','half-width'].join(' ') for="password") Password
+    div.form-group.row
+      label(class='col-xg-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left p-1' for="password") Password
         input#password(ng-class="{'is-invalid': !pswMatch}" class='form-control' type='password' ng-model='password' placeholder='Password' ng-change="validatePassword()" required)
         small.invalid-feedback  {{pswStatus}}
-      label(class=['right','half-width'].join(' ') for="password2") Confirm Password
+      label(class='col-xg-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left p-1' for="password2") Confirm
         input#password2(ng-class="{'is-invalid': !pswMatch}" class='form-control' type='password' ng-model='password2' placeholder='Confirm password' ng-change="validatePassword()" required)
-    button(class='btn bg-light btn-outline-secondary form-control' ng-click='submit()') Sign up
+    div.form-group.row.p-1
+      button(class='btn bg-light btn-outline-secondary form-control col' ng-click='submit()') Sign up
+

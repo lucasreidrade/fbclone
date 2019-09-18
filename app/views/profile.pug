@@ -1,11 +1,26 @@
 extends layout
 
-block content
-  container(class=['container-fluid','row','h-100','w-100'].join(' '))
-    div(class=['container','col-12', 'w-100'].join(' '))
-      h1 User
-
-
 block header
-  header(class=['header','navbar','navbar-fixed-top','bg-dark','text-light','container-fluid'].join(' '))
-    h1= title
+  header(class='header navbar navbar-fixed-top bg-dark text-light container-fluid')
+      div.left
+        h1= title
+      div.right
+        include search_bar.pug
+
+block content
+  container('container container-fluid row')
+    div(class='col text-center')
+      ul(class='nav nav-tabs nav-justified row')
+        li(class='nav-item border col p-0')
+          a(class='nav-link btn btn-block active' data-toggle='tab' href='#Profile') Profile
+        li(class='nav-item border col p-0')
+          a(class='nav-link btn btn-block' data-toggle='tab' href='#Posts') Posts
+        li(class='nav-item border col p-0')
+          a(class='nav-link btn btn-block' data-toggle='tab' href='#Friends') Friends
+      div(class="tab-content border row")
+        div#Profile(class='tab-pane fade active show w-100 p-sm-3 col')
+          include profile_show.pug
+        div#Posts(class='tab-pane fade w100 p-sm-3 col')
+          include profile_posts.pug
+        div#Friends(class='tab-pane fade w100 p-sm-3 col')
+          include profile_friends.pug

@@ -1,12 +1,20 @@
 extends layout
 
 block content
-  container(class=['container-fluid','row','h-100','w-100'].join(' '))
-    div(class=['container','col-12', 'w-100'].join(' '))
+  container(class='container-fluid row')
+    div(class='container col')
       h1 Edit Profile
-      include profile_form.pug
-
-
-block header
-  header(class=['header','navbar','navbar-fixed-top','bg-dark','text-light','container-fluid'].join(' '))
-    h1= title
+      div.p1(ng-controller='profileFormCtrl')
+        form
+          div.form-group.row
+            label(class='text-left col p-1' for="name") Profile Name
+              input#name(class='form-control' type='text' ng-model='user.name' placeholder='Name')
+          div.form-group.row
+            label(class='col-xg-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left p-1' for="picture") Profile Picture
+              div.form-control.h-100.overflow-hidden
+                input.left#picture(type='file' accept="image/*" ng-model='picture' onchange="angular.element(this).scope().changePicture(this)")
+                img#view(class='right' style='max-width:150px;max-height:200px;' ng-src="{{imgSrc}}")
+            label(class='col-xg-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left p-1' for="bio")  Bio
+              textarea.h-100.p-1#bio(class='noresize left form-control overflow-auto' ng-model='user.bio' placeholder='Bio')  
+          div.row.form-group.p-1
+            button(class='btn bg-light btn-outline-secondary form-control' ng-click='submit()') Update

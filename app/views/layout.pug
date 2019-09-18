@@ -9,15 +9,20 @@ html
     script(src='/angular/angular.js')
     script.
       var myApp = angular.module('myApp', []);
+      
+    script(src='/angular/config.js')
     script(src='/angular/services.js')
     script(src='/angular/controllers.js')
     
-  body(ng-app='myApp')
+  body.overflow-auto.min-vh-25(ng-app='myApp')
     block header
-    block content
+      header(class='header navbar navbar-fixed-top bg-dark text-light container-fluid')
+        h1= title
+    div.overflow-auto.min-vh-25.h-100
+      block content
     block footer
-      footer(class=['footer','bg-dark','text-light','sticky-bottom'].join(' '))
-        hsmall(class=['float-right','small-padding'].join(' ')) &copy; Lucas Andrade, 2018
+      footer(class='page-footer font-small bg-dark text-light sticky-bottom')
+        hsmall(class='float-right small-padding') &copy; Lucas Andrade, 2018
 
 
   //Scripts needed for bootstrap to work properly.

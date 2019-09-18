@@ -1,9 +1,9 @@
-div(ng-controller='loginFormCtrl')
+div.p-1(ng-controller='loginFormCtrl')
   form
-    div.form-group
-      label.left.half-width(for="email") E-mail
+    div.form-group.row
+      label(class='col-xg-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left p-1' for="email") E-mail
         input#email(class='form-control' type='email' ng-model='email' placeholder='E-mail' required)
-      label.right.half-width(for="password")  Password
+      label(class='col-xg-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left p-1' for="password")  Password
         input#password(class='form-control' type='password' ng-model='password' placeholder='Password' required)  
-    div.form-group
-      button(class='btn bg-light btn-outline-secondary form-control' ng-click='submit()') Log in
+    div.form-group.row.p-1
+      button(class='btn bg-light btn-outline-secondary form-control col' ng-click='submit()') Log in

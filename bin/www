@@ -4,6 +4,7 @@
  * Module dependencies.
  */
 
+'use strict';
 var app = require('../app');
 var debug = require('debug')('baseproj:server');
 var http = require('http');

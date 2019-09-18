@@ -30,7 +30,7 @@ const userSchema = new mongoose.Schema({
   },
   hash: String,
   salt: String,
-  image: { data: Buffer, contentType: String },
+  image: { data: String },
   bio: String,
   following: [{userId: ObjectId}],
   followers: [{userId: ObjectId}],
@@ -54,11 +54,11 @@ userSchema.methods.generateJwt = function() {
   expiry.setDate(expiry.getDate() + 7);
 
   return jwt.sign({
-    _id: this._id,
-    email: this.email,
-    name: this.username,
+    id: this._id,
     exp: parseInt(expiry.getTime() / 1000),
   }, process.env.JWT_SECRET); // DO NOT KEEP YOUR SECRET IN THE CODE!
 };
 
 mongoose.model('User', userSchema);
+
+
