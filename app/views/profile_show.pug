@@ -1,0 +1,11 @@
+div(ng-controller='ProfileShowCtrl').row
+  div.container.border.col-12
+    button(ng-if="isUser" class='btn bg-light btn-outline-secondary w-100' ng-click='edit()') Edit
+    button(ng-if="!isFollowing&&!isUser" class='btn bg-light btn-outline-secondary w-100' ng-click='follow()') Follow
+    button( ng-if="isFollowing&&!isUser" class='btn bg-light btn-outline-secondary w-100' ng-click='unfollow()') Unfollow
+    h2.text-center {{userName}}
+    div.row
+      div(class='col-xg-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 text-center')
+        img(style='max-width:450px;max-height:600px;' ng-src="{{imgSrc}}")
+      div(class='col-xg-9 col-lg-8 col-md-6 col-sm-12 col-xs-12')
+        div#bio.container.w-100.border.text-left

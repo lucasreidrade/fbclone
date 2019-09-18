@@ -1,0 +1,31 @@
+extends layout
+
+block header
+  header(class='header navbar navbar-fixed-top bg-dark text-light container-fluid')
+      div.left
+        h1= title
+      div.right
+        include search_bar.pug
+
+block content
+  div.p-1
+    h3 Result
+    ul.list-group.row
+      li.list-group-item.col
+        div.row
+          div.col-3
+            img.img-thumbnail(src='../images/pic_angular.jpg')
+          div.col-9.text-left
+            p User 1
+      li.list-group-item.col
+        div.row
+          div.col-3
+            img.img-thumbnail(src='../images/pic_angular.jpg')
+          div.col-9.text-left
+            p User 2
+      li.list-group-item.col
+        div.row
+          div.col-3
+            img.img-thumbnail(src='../images/pic_angular.jpg')
+          div.col-9.text-left
+            p User 3
